@@ -1,19 +1,22 @@
-def test_google():
+def test_gmail():
     import time
     from selenium import webdriver
-    from selenium.webdriver.support.wait import WebDriverWait
     driver = webdriver.Chrome('chromedriver.exe')
     driver.implicitly_wait(10)
     driver.get('https://www.google.com/')
 
     search_input = driver.find_element_by_xpath('//*[@id="tsf"]/div[2]/div[1]/div[1]/div/div[2]/input')
-    search_input.send_keys('facebook' +"\n")
+    search_input.send_keys('facebook acount' +"\n")
+
     enter_facebook = driver.find_element_by_xpath('//*[@id="rso"]/div[1]/div/div/div[1]/a')
     enter_facebook.click()
+
     phone = driver.find_element_by_xpath('//*[@id="email"]')
     phone.send_keys('+380635843742')
+
     password = driver.find_element_by_xpath('//*[@id="pass"]')
     password.send_keys('257992ss')
+
     entrance = driver.find_element_by_xpath('//*[@id="u_0_b"]')
     entrance.click()
 
@@ -23,7 +26,7 @@ def test_google():
 
 
 
-    acount = driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/span/span/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div[1]')
+    acount = driver.find_element_by_xpath('//*[@id="mount_0_0"]/div/div/div[1]/div[4]/div/span/span/div/div/div/div/div/div/div/div/div/div/div[1]/div[1]/div/a/div[1]')
     acount.click()
 
 
